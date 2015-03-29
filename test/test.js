@@ -1,8 +1,9 @@
 var app = require('../app'),
     assert = require('assert'),
     request = require('supertest'),
+    util = require('util'),
     MongoClient = require('mongodb').MongoClient,
-    mongoUrl = 'mongodb://localhost:27017/demo';
+    mongoUrl = util.format('mongodb://mongo:%s/demo', process.env.MONGO_PORT);
 
 before(function(done) {
   MongoClient.connect(mongoUrl, function (err, db) {

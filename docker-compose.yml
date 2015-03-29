@@ -3,7 +3,7 @@ web:
   links:
     - mongo
   ports:
-    - "27017:27017"
+    - "9000:9000"
 mongo:
   image: mongo
 
