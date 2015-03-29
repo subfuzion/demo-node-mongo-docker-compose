@@ -1,11 +1,10 @@
 FROM ubuntu:14.04
 
-RUN sudo apt-get update -yq && apt-get upgrade -yq
-RUN apt-get install -yq curl git
-RUN curl -sL https://deb.nodesource.com/setup | bash - && \
-    apt-get install -yq nodejs build-essential
-RUN sudo ln -s "$(which nodejs)" /usr/bin/node
-RUN npm install -g npm grunt-cli gulp
+RUN apt-get update -yq && apt-get upgrade -yq && \
+    apt-get install -yq curl git ssh sshpass
+RUN apt-get -q -y install nodejs npm build-essential
+RUN ln -s "$(which nodejs)" /usr/bin/node
+RUN npm install -g npm bower grunt-cli gulp
 
 # copy app and install deps
 COPY . /src
