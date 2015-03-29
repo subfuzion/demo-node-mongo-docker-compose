@@ -1,8 +1,9 @@
 var app = require('./app'),
     debug = require('debug')('demo:server'),
-    MongoClient = require('mongodb').MongoClient,
-    mongoUrl = 'mongodb://localhost:27017/demo',
+    util = require('util'),
     port = process.env.PORT || 3000;
+    MongoClient = require('mongodb').MongoClient,
+    mongoUrl = util.format('mongodb://mongo:%s/demo', process.env.MONGO_PORT);
 
 MongoClient.connect(mongoUrl, function (err, db) {
   if (err) {
