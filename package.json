@@ -1,5 +1,5 @@
 {
-  "name": "node-mongo-docker-compose-demo",
+  "name": "demo-node-mongo-docker-compose",
   "version": "1.0.0",
   "description": "Codefresh Demo",
   "main": "app.js",
