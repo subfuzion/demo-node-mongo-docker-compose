@@ -1,5 +1,6 @@
-node-demo
-=========
+node-mongo-docker-compose-demo
+==============================
 
-Basic server demo
+    npm install
+    npm test
 
