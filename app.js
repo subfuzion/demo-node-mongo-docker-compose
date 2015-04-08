@@ -1,5 +1,6 @@
 var express = require('express'),
     app = express(),
+    pkg = require('./package.json'),
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
     users = require('./lib/users')(getDB);
@@ -12,6 +13,10 @@ app.use(bodyParser.json());
 function getDB() {
   return app.get('db');
 }
+
+app.get('/', function(req, res) {
+	res.json({ name: pkg.name, version: pkg.version });
+});
 
 app.get('/users', function(req, res) {
 
